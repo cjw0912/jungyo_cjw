@@ -40,3 +40,19 @@
       }
     });
   })
+const modal = document.querySelector('.modal');
+const modalOpen = document.querySelector('.modal_btn');
+const modalClose = document.querySelector('.btnBack');
+modalOpen.addEventListener('click', function(){modal.classList.add('on');})
+modalClose.addEventListener('click', function(){modal.classList.remove('on');})
+const txtBox = document.querySelector('#password');
+const btnOk = document.querySelector('#btnOk');
+btnOk.addEventListener('click', function() {
+  const txt = txtBox.value;
+  if (txt === "1234") {
+    window.location.href = "AI/chatGPT/portfolio_Ai.html";
+  }
+  else {
+    alert("비밀번호가 틀렸습니다.");
+  }
+})

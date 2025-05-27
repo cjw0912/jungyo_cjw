@@ -9,8 +9,32 @@ header, footer {
     padding: 10px;
     text-align: center;
 }
-
-
+main {
+  padding: 20px;
+  text-align: center;
+}
+.modal {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0 0 0 /40%);
+}
+.modal.on {
+    display: block;
+}
+.modal .modal_popup {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
 
 /*햄버거메뉴 시작*/
 .menu-trigger {
@@ -105,5 +129,60 @@ header, footer {
   background-color: #fff;
   text-decoration: none;
 }
+/*햄버거메뉴 사이드바*/
+.ham-menu .ham-sub-menu li {
+  display: block;
+  color:#333;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+}
+.ham-sub-menu li:hover {
+  color: white;
+  background-color:#333;
+}
 /*햄버거메뉴 끝*/
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.toggleSwitch {
+  width: 100px;
+  height: 50px;
+  display: block;
+  position: relative;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 16px 3px rgba(0 0 0 / 15%);
+  cursor: pointer;
+  margin: 30px;
+}
+
+.toggleSwitch .toggleButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #1b3dff;
+}
+
+#toggle:checked ~ .toggleSwitch {
+  box-shadow: 0 0 16px 3px rgba(255, 255, 255, 0.15);
+  background: #000000;
+}
+
+#toggle:checked ~ .toggleSwitch .toggleButton {
+  left: calc(100% - 44px);
+  background: #fff;
+}
+
+.toggleSwitch, .toggleButton {
+  transition: all 0.2s ease-in;
+}
